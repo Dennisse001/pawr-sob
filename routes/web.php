@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditUserController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,4 +44,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/user/update/{id}', [EditUserController::class, 'updateuser'])->name('updateuser');
     Route::get('/admin/user/hapus/{id}', [EditUserController::class, 'hapususer'])->name('hapususer');
 
+    //kategori
+    Route::get('/admin/kategori', [KategoriController::class, 'showKat'])->name('showskat');
+    Route::get('/tambah_kat', [KategoriController::class, 'tambahkat'])->name('tambahkat');
+    Route::post('/add_kat', [KategoriController::class, 'addkat'])->name('addkat');
+    Route::get('/admin/kategori/edit/{id}', [KategoriController::class, 'editKat'])->name('editKat');
+    Route::post('/admin/kategori/update/{id}', [KategoriController::class, 'updateKat'])->name('updateKat');
+    Route::get('/admin/kategori/hapus/{id}', [KategoriController::class, 'hapusKat'])->name('hapusKat');
 });

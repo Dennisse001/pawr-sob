@@ -110,7 +110,7 @@
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="{{ route('showskat') }}">
           <i class="bi bi-tags"></i>
           <span>List Category</span>
         </a>

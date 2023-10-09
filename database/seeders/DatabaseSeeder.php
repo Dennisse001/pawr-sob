@@ -40,5 +40,11 @@ class DatabaseSeeder extends Seeder
 
 
         ]);
+
+
+        DB::table('kategoris')->insert([
+            [
+                'kategori' => 'Makanan',]
+            ]);
     }
 }
