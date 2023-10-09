@@ -17,7 +17,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Data Spesialis</h5>
+                        <h5 class="card-title">Data Kategori</h5>
                         <a href="{{ route('tambahkat') }}" class="btn btn-primary">Tambah Data</a>
 
                         <!-- Table with stripped rows -->
@@ -25,8 +25,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Nomor Urut</th>
-                                    <th scope="col">Spesialis</th>
-                                    <th scope="col">Jenis</th>
+                                    <th scope="col">Kategori</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
@@ -36,7 +35,6 @@
                                 <tr>
                                     <td>{{ $nomorUrut++ }}</td>
                                     <td>{{ $kategori->kategori }}</td>
-                                    <td>{{ $kategori->jenis }}</td>
                                     <td>
                                         <a href="{{ route('editKat', ['id' => $kategori->id]) }}" class="btn btn-warning">Edit</a>
                                         <a href="{{ route('hapusKat', ['id' => $kategori->id]) }}" class="btn btn-danger">Hapus</a>
