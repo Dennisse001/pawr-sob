@@ -103,7 +103,7 @@
       <li class="nav-heading">Listing</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="{{ route('showsprod') }}">
           <i class="bi bi-shop-window"></i>
           <span>List Product</span>
         </a>

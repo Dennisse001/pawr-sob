@@ -14,26 +14,24 @@ class KategoriController extends Controller
     }
     public function tambahkat()
     {
-        return view('admin.kategori.tambahspel');
+        return view('admin.kategori.tambahkat');
     }
 
     public function addkat(Request $request)
     {
         $request->validate(
             [
-                'kategori'     => 'required',
-                'jenis'     => 'required',
+                'kategori'     => 'required'
             ],
             [
-                'kategori.required'    => 'kategori harus di isi',
-                'jenis.required'    => 'kategori harus di isi'
+                'kategori.required'    => 'kategori harus di isi'
             ]
         );
         $model  = new kategori();
         $model->kategori = $request->kategori;
         $model->save();
 
-        return redirect('/kategori')->with('success', 'Data kategori berhasil ditambahkan');
+        return redirect('/admin/kategori')->with('success', 'Data kategori berhasil ditambahkan');
     }
     public function editKat($id)
     {
@@ -42,7 +40,7 @@ class KategoriController extends Controller
         if (!$kategori) {
             return redirect()->route('showskat')->with('error', 'Data kategori tidak ditemukan');
         }
-        return view('admin.kategori.editspel', compact('kategori'));
+        return view('admin.kategori.editkat', compact('kategori'));
     }
     public function updateKat(Request $request, $id)
     {

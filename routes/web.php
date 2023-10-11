@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditUserController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,4 +52,12 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/kategori/edit/{id}', [KategoriController::class, 'editKat'])->name('editKat');
     Route::post('/admin/kategori/update/{id}', [KategoriController::class, 'updateKat'])->name('updateKat');
     Route::get('/admin/kategori/hapus/{id}', [KategoriController::class, 'hapusKat'])->name('hapusKat');
+
+    //produk
+    Route::get('/admin/produk', [ProdukController::class, 'showProd'])->name('showsprod');
+    Route::get('/tambah_prod', [ProdukController::class, 'tambahprod'])->name('tambahprod');
+    Route::post('/add_prod', [ProdukController::class, 'addprod'])->name('addprod');
+    Route::get('/admin/produk/edit/{id}', [ProdukController::class, 'editProd'])->name('editprod');
+    Route::post('/admin/produk/update/{id}', [ProdukController::class, 'updateprod'])->name('updateprod');
+    Route::get('/admin/produk/hapus/{id}', [ProdukController::class, 'hapusprod'])->name('hapusprod');
 });
